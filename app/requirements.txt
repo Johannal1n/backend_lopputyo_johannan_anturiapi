@@ -1,0 +1,4 @@
+fastapi==0.115.5
+sqlmodel==0.0.22
+uvicorn[standard]==0.32.1
+python-dateutil==2.9.0
