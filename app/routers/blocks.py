@@ -13,7 +13,7 @@ def get_blocks(
     *,
     session: Session = Depends(get_session)
 ):
-    """Hae kaikki lohkot"""
+    """Hae kaikki lohkot 📦"""
     return blocks_crud.get_all_blocks(session)
 
 
@@ -23,7 +23,7 @@ def create_block(
     session: Session = Depends(get_session),
     block_in: BlockBase
 ):
-    """Luo uusi lohko"""
+    """Luo uusi lohko 📦"""
     return blocks_crud.create_block(session, block_in.name)
 
 
@@ -33,7 +33,7 @@ def get_block(
     session: Session = Depends(get_session),
     block_id: int
 ):
-    """Hae lohko id:llä"""
+    """Hae lohko id:llä 📦"""
     return blocks_crud.get_block_by_id(session, block_id)
 
 
@@ -43,5 +43,5 @@ def get_block_sensors(
     session: Session = Depends(get_session),
     block_id: int
 ):
-    """Hae lohkon anturit"""
+    """Hae lohkon anturit 📍"""
     return sensors_crud.get_sensors_by_block(session, block_id)

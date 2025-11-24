@@ -19,7 +19,7 @@ def get_sensors(
     session: Session = Depends(get_session),
     state: Optional[SensorState] = Query(None, description="Filter sensors by state")
 ):
-    """Hae kaikki anturit, valinnainen suodatus tilan perusteella"""
+    """Hae kaikki anturit, valinnainen suodatus tilan perusteella 🌡️"""
     if state:
         return sensors_crud.get_sensors_by_state(session, state)
     return sensors_crud.get_all_sensors(session)
@@ -31,7 +31,7 @@ def create_sensor(
     session: Session = Depends(get_session),
     sensor_in: SensorIn
 ):
-    """Lisää uusi anturi"""
+    """Lisää uusi anturi 📡"""
     return sensors_crud.create_sensor(session, sensor_in)
 
 
@@ -51,11 +51,11 @@ def get_sensor_measurements(
     session: Session = Depends(get_session),
     sensor_id: int,
     limit: int = Query(10, description="Palautettavien mittausten määrä (default 10)", ge=1),
-    start_time: Optional[datetime] = Query(None, description="Suodata mittaukset tästä ajasta alkaen"),
-    end_time: Optional[datetime] = Query(None, description="Suodata mittaukset tähän asti")
+    start_time: Optional[datetime] = Query(None, description="Suodata mittaukset tästä ajasta alkaen 🕒"),
+    end_time: Optional[datetime] = Query(None, description="Suodata mittaukset tähän ajankkohtaan asti ⏳")
 ):
     """
-    Hae anturin mittaukset.
+    Hae anturin mittaukset 📝.
     Palauttaa oletuksena 10 uusinta mittausta.
     Tuloksia voi rajata aikavälillä käyttämällä start_time- ja end_time -parametreja.
     """
@@ -68,7 +68,7 @@ def get_sensor_state_changes(
     session: Session = Depends(get_session),
     sensor_id: int
 ):
-    """Hae anturin tilamuutokset"""
+    """Hae anturin tilamuutokset 🔄"""
     return sensors_crud.get_sensor_state_changes(session, sensor_id)
 
 
@@ -79,7 +79,7 @@ def update_sensor_state(
     sensor_id: int,
     state_update: SensorStateUpdateRequest
 ):
-    """Vaihda anturin tila"""
+    """Vaihda anturin tila 🏭"""
     return sensors_crud.update_sensor_state(session, sensor_id, state_update.new_state)
 
 

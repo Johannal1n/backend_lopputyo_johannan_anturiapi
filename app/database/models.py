@@ -53,7 +53,7 @@ class SensorDetailOut(SensorOut):
 
 
 class MeasurementBase(SQLModel):
-    temperature: float = Field(description="Temperature in Celsius with one decimal precision")
+    temperature: float = Field(description="Lämpötila Celsius-asteina yhden desimaalin tarkkuudella.")
     timestamp: datetime = Field(default_factory=datetime)
 
 

@@ -15,7 +15,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="🔥 Johannan AnturiAPI 🔥",
-    description="REST-rajapinta tehdashallin lämpötila-antureiden datan keräämiseen ja hallintaan.",
+    description="📊 REST-rajapinta tehdashallin lämpötila-antureiden datan keräämiseen ja hallintaan 📊.",
     version="1.0.0",
     lifespan=lifespan
 )
